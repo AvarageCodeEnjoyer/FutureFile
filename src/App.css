@@ -1,0 +1,184 @@
+:root {
+  --pattens-blue: #E3F5FF;
+  --half-baked: #7EC2D3;
+  --bondi-blue: #0898AF;
+  --dark-blue: #242E64;
+}
+
+
+body{
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+  /* We can change the font color to the dark blue */
+  color: var(--dark-blue) !important
+}
+
+#root{
+  display: flex;
+  justify-content: center;
+  min-height: 100%;
+  width: 100%;
+}
+
+.loading{
+  width: 100%;
+  height: 100vh;
+  background-color: black;
+  opacity: 0.75;
+  position: 'absolute';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading img{
+  height: 250px;
+}
+
+hr {
+  width: 100%; /* This ensures the <hr/> occupies the full width of its container */
+  margin: 10px 0; /* Adjust margin as needed */
+  border: none; /* Remove default border */
+  border-top: 2px solid #aaa; /* Add your preferred border style */
+}
+
+/* -------------------------------- Container ------------------------------- */
+
+.container {
+  display: grid;
+
+  background-color: var(--pattens-blue);
+  min-height: 100vh;
+  width: 70%;
+}
+
+.container * {
+  border-radius: 10px;
+}
+
+.inner_container {
+  width: 96%;
+  justify-self: center;
+  margin-bottom: 2%;
+}
+
+/* ------------------------------- Top Section ------------------------------ */
+
+.top_section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 320px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+.profile_image_container {
+  width: 320px;
+  height: 320px;
+  background-color: var(--bondi-blue);
+
+  box-sizing: border-box;
+  padding: 16px;
+}
+
+.profile_image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.description_container {
+  display: grid;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 72%;
+  min-height: 320px;
+  height: auto;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 16px;
+  margin-left: 2%;
+}
+
+.description_container h4 {
+  color: gray;
+}
+
+.description_container b {
+  font-size: large;
+}
+
+.user_info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: auto;
+}
+
+.user_info > h4 {
+  margin-bottom: 8px;
+}
+
+/* ----------------------------- Middle Section ----------------------------- */
+
+.middle_section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 200px;
+  height: fit-content;
+  background-color: white;
+  padding-top: 1%;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                               Mobile stylings                              */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 700px) {
+  /* ------------------------------- Containers ------------------------------- */
+
+  .container {
+    width: 100vw;
+  }
+
+  .inner_container {
+    width: 100%;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .profile_image_container {
+    width: 96%;
+    height: min-content;
+    max-height: 450px;
+  }
+
+  .description_container {
+    margin-top: 2%;
+    margin-right: 2%;
+    width: auto;
+  }
+
+  /* ------------------------------- Top section ------------------------------ */
+  
+  .top_section {
+    flex-direction: column;
+    height: fit-content;
+  }
+
+  /* ----------------------------- Middle section ----------------------------- */
+
+  .middle_section {
+    width: 96%;
+    justify-self: center;
+  }
+}

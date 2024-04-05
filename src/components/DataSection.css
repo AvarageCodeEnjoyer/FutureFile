@@ -1,0 +1,47 @@
+.data_section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 96%;
+  height: fit-content;
+  margin-bottom: 2%;
+}
+
+.data_section::after {
+  content: '';
+  position: absolute;
+  bottom: -18px;
+  width: 100%; /* Stretch the element across the whole container */
+  border-bottom: 4px solid var(--dark-blue); /* Add a border to simulate hr */
+  border-radius: 2px;
+}
+
+.data_section:last-child::after {
+  display: none; /* Or any other styles you want to override */
+}
+
+.data_header {
+  font-size: 40px;
+  margin-bottom: 0px;
+}
+
+.data_items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;  
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                Mobile Styles                               */
+/* -------------------------------------------------------------------------- */
+
+@media screen and (max-width: 700px) {
+  .data_items p {
+    margin: 4px;
+  }
+
+  .data_items > div > h1 {
+    margin-top: 2px;
+    margin-bottom: 2px;
+  }
+}

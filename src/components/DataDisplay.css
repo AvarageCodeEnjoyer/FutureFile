@@ -1,0 +1,17 @@
+/* ------------------------------ Data display ------------------------------ */
+
+.data_display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pattens-blue);
+  width: fit-content;
+  padding: 8px;
+}
+
+.small_display {
+  height: 3.75rem;
+  padding: 29px;
+}
+
+/* -------------------------------------------------------------------------- */
