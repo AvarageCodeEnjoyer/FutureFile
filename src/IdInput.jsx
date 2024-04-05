@@ -1,15 +1,16 @@
 import Logo from './assets/fblaLogo.png'
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function IdInput() {
   const location = useLocation()
   const queryParams = new URLSearchParams(location.search);
   const message = queryParams.get('message');
+  const navigate = useNavigate();
 
   function goToId(event) {
     event.preventDefault()
     const id = event.target[0].value
-    window.location.href = `/${id}`
+    navigate(`/${id}`)
   }
 
   return (
