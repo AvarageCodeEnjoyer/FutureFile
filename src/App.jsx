@@ -11,7 +11,7 @@ import './App.css'
 function App() {
   const navigate = useNavigate()
   
-  /* ------------------------- Get the firestore data ------------------------- */
+  /* ------------------------- Get the Firestore data ------------------------- */
 
   const userId = useParams().id;
   const [User, setUser] = useState(null)

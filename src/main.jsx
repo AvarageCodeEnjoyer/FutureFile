@@ -8,7 +8,7 @@ import { Router, BrowserRouter, Route, Routes } from 'react-router-dom'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <BrowserRouter>
-    <Routes basename="localhost:5173">
+    <Routes basename="future-file.vercel.app">
       {/* Routes for the app */}
       <Route path="/" element={<IdInput />}/>
       <Route path="/:id" element={<App />}/>
