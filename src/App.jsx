@@ -6,6 +6,9 @@ import LoadingSpinner from './components/LoadingSpinner';
 import DataSection from './components/DataSection'
 import { generateBio } from './util/generateBio';
 
+// The app wont load if the user does'nt have a profile photo 
+import defaultProfilePic from './assets/images/defaultProfilePic.jpg'
+
 import './App.css'
 
 function App() {
@@ -28,6 +31,7 @@ function App() {
   }, [])
 
   // if the provided id is not valid, redirect to the home page and show an error message
+  // if the user exists but is loading, show a loading spinner
   if (!userId || User?.error) {
     return navigate("/?message=Couldn't find a user!")
   } else if (!User) {
@@ -114,7 +118,7 @@ function App() {
       <div className="inner_container">
         <div className="top_section">
           <div className="profile_image_container">
-            <img className="profile_image" src={User.ProfilePicture.uri} alt="" />
+            <img className="profile_image" src={ User.ProfilePicture?.uri || defaultProfilePic } alt="" />
           </div>
 
           {/* This is the section that displays the user's name and bio */}

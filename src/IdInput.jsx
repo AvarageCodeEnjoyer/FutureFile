@@ -1,4 +1,4 @@
-import Logo from './assets/fblaLogo.png'
+import Logo from './assets/images/fblaLogo.png'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 export default function IdInput() {

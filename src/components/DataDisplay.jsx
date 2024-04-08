@@ -19,6 +19,16 @@ export default function DataDisplay({ params }) {
       return IterableList({ items: params, key: key })
     }
     
+    if (key === 'Personal Website') {
+      const domain = params[key].split('//')[1].split('/')[0]
+      return (
+        // If the value is a string then render the key and value
+        <p className="data_display small_display">
+          <b>{key}</b>:<a href={params[key]} target='_blank' style={{ color: 'blue', marginLeft: '4px' }}>{` ${domain}`}</a>
+        </p>
+      )
+    }
+    
     return (
       // If the value is a string then render the key and value
       <p className="data_display small_display">
