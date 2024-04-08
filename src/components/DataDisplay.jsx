@@ -23,7 +23,7 @@ export default function DataDisplay({ params }) {
       const domain = params[key].split('//')[1].split('/')[0]
       return (
         // If the value is a string then render the key and value
-        <p className="data_display small_display">
+        <p className="data_display small_display rounded-2xl">
           <b>{key}</b>:<a href={params[key]} target='_blank' style={{ color: 'blue', marginLeft: '4px' }}>{` ${domain}`}</a>
         </p>
       )
@@ -31,7 +31,7 @@ export default function DataDisplay({ params }) {
     
     return (
       // If the value is a string then render the key and value
-      <p className="data_display small_display">
+      <p className="data_display small_display rounded-2xl">
         <b>{key}</b>: {params[key]}
       </p>
     )
