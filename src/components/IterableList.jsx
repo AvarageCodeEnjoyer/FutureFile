@@ -44,7 +44,7 @@ export default function IterableList({ items, key }) {
         const linkList = items[key].map(data => {
           return CreateLink(data.link)
         })  
-        return collapseMenu(linkList)
+        return collapseMenu({ arrayValues: linkList, key })
   
       default:
         arrayConversion = items[key].map(({ id, ...rest }) => Object.values(rest))
