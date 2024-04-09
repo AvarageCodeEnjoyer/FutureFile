@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import FIREBASE from '../firebase';
-import getUser from './util/getUser';
+import getUser from './utils/getUser';
 import LoadingSpinner from './components/LoadingSpinner';
 import DataSection from './components/DataSection'
-import { generateBio } from './util/generateBio';
+import { generateBio } from './utils/generateBio';
 
 // The app wont load if the user does'nt have a profile photo 
 import defaultProfilePic from './assets/images/defaultProfilePic.jpg'
@@ -25,6 +25,7 @@ function App() {
       if (!userId) return;
       const data = await getUser(userId, FIREBASE);
       setUser(data)
+      console.log(data)
     }
 
     getUserByID()
@@ -106,7 +107,7 @@ function App() {
         { "Other Activities": userData.otherActivities },
         { "Other Links": userData.otherLinks },
         // Im not sure why this is here but im going to put it in anyways
-        { "Tasks": userData.tasks },
+        // { "Tasks": userData.tasks },
       ]
     }
   ]

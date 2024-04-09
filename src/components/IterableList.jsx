@@ -1,4 +1,23 @@
+import CreateLink from './CreateLink.jsx'
 import './DataDisplay.css'
+
+function collapseMenu(items) {
+  <div className="collapse collapse-plus bg-pattensBlue min-w-64 w-10 self-start">
+    <input type="checkbox" /> 
+    <div className="collapse-title text-xl font-medium">
+      {key}
+    </div>
+    <div className="collapse-content"> 
+      // TODO: FIX TO WORK WITH LINKS AS A TAGS
+      {/* {key === 'Other Links' ? :} */}
+      {items.map((item, index) => (
+        <p className="data_display my-2 bg-halfBaked" key={index}>
+          <b className="text-lg">{item}</b>
+        </p>
+      ))}
+    </div>
+  </div>
+}
 
 export default function IterableList({ items, key }) {
     let arrayConversion = []
@@ -8,18 +27,33 @@ export default function IterableList({ items, key }) {
       case "Courses Taken":
         arrayConversion = arrayConversion.map(course => course.course)
         break
-        
+
+      case "Experiences":
+      case "Internships":
       case "Community Services":
         arrayConversion = items[key].map(service => {
           const stringConversion = `${service.name}: ${service.date1}-${service.date2}`
           return stringConversion
         })      
         break
+
+      // TODO: FINISH THIS TO CREATE LINKS
+      case "Other Links":
+        const linkList = items[key].map(data => {
+          return CreateLink(data.link)
+        })  
+        return collapseMenu(linkList)
   
       default:
         arrayConversion = items[key].map(({ id, ...rest }) => Object.values(rest))
         break
     }
+
+    // TODO: USE THIS IN THE SWITCH
+    /* if (key === 'Other Links') {
+      
+      return linkList
+    } */
   
     // Flatten the array to 1 dimensional iterable array
     const arrayValues = arrayConversion.flat()
@@ -30,18 +64,6 @@ export default function IterableList({ items, key }) {
     return (
       // This is the collapsible section if the data contained is iterable, 
       // https://daisyui.com/components/collapse/#collapse-with-checkbox
-      <div className="collapse collapse-plus bg-pattensBlue min-w-64 w-10 self-start">
-        <input type="checkbox" /> 
-        <div className="collapse-title text-xl font-medium">
-          {key}
-        </div>
-        <div className="collapse-content"> 
-          {arrayValues.map((item, index) => (
-            <p className="data_display my-2 bg-halfBaked" key={index}>
-              <b className="text-lg">{item}</b>
-            </p>
-          ))}
-        </div>
-      </div>
+      collapseMenu(arrayValues)
     )
   }

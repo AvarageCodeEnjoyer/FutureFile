@@ -1,4 +1,5 @@
 import IterableList from './IterableList'
+import CreateLink from './CreateLink'
 
 export default function DataDisplay({ params }) {
     // Check if the value is an iterable and if so render it as a list
@@ -20,13 +21,7 @@ export default function DataDisplay({ params }) {
     }
     
     if (key === 'Personal Website') {
-      const domain = params[key].split('//')[1].split('/')[0]
-      return (
-        // If the value is a string then render the key and value
-        <p className="data_display small_display rounded-2xl">
-          <b>{key}</b>:<a href={params[key]} target='_blank' style={{ color: 'blue', marginLeft: '4px' }}>{` ${domain}`}</a>
-        </p>
-      )
+      return CreateLink(params[key])
     }
     
     return (
