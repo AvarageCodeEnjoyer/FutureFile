@@ -1,7 +1,9 @@
 import CreateLink from './CreateLink.jsx'
 import './DataDisplay.css'
 
-function collapseMenu(items) {
+// This is the collapsible section if the data contained is iterable, 
+// https://daisyui.com/components/collapse/#collapse-with-checkbox
+function collapseMenu({ arrayValues, key }) {
   <div className="collapse collapse-plus bg-pattensBlue min-w-64 w-10 self-start">
     <input type="checkbox" /> 
     <div className="collapse-title text-xl font-medium">
@@ -10,7 +12,7 @@ function collapseMenu(items) {
     <div className="collapse-content"> 
       // TODO: FIX TO WORK WITH LINKS AS A TAGS
       {/* {key === 'Other Links' ? :} */}
-      {items.map((item, index) => (
+      {arrayValues.map((item, index) => (
         <p className="data_display my-2 bg-halfBaked" key={index}>
           <b className="text-lg">{item}</b>
         </p>
@@ -48,12 +50,6 @@ export default function IterableList({ items, key }) {
         arrayConversion = items[key].map(({ id, ...rest }) => Object.values(rest))
         break
     }
-
-    // TODO: USE THIS IN THE SWITCH
-    /* if (key === 'Other Links') {
-      
-      return linkList
-    } */
   
     // Flatten the array to 1 dimensional iterable array
     const arrayValues = arrayConversion.flat()
@@ -61,9 +57,5 @@ export default function IterableList({ items, key }) {
     // Don't render anything if there are no values
     if (arrayValues.length === 0) return null
   
-    return (
-      // This is the collapsible section if the data contained is iterable, 
-      // https://daisyui.com/components/collapse/#collapse-with-checkbox
-      collapseMenu(arrayValues)
-    )
+    return collapseMenu({ arrayValues, key })
   }
