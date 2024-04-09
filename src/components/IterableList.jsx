@@ -11,12 +11,17 @@ function collapseMenu({ arrayValues, key }) {
     </div>
     <div className="collapse-content"> 
       // TODO: FIX TO WORK WITH LINKS AS A TAGS
-      {/* {key === 'Other Links' ? :} */}
-      {arrayValues.map((item, index) => (
-        <p className="data_display my-2 bg-halfBaked" key={index}>
-          <b className="text-lg">{item}</b>
-        </p>
-      ))}
+      {key === 'Other Links' ? 
+        arrayValues.map(links => {
+          return links
+        }) 
+        :
+        arrayValues.map((item, index) => (
+          <p className="data_display my-2 bg-halfBaked" key={index}>
+            <b className="text-lg">{item}</b>
+          </p>
+        ))
+      }
     </div>
   </div>
 }
