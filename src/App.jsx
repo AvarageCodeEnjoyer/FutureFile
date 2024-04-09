@@ -123,7 +123,7 @@ function App() {
 
           {/* This is the section that displays the user's name and bio */}
           <div className="description_container">
-            <div className="user_info h-24">
+            <div className="user_info">
               <h1 className="text-4xl font-bold mb-4">{userData.name}</h1>
               <hr className='border-2'/>
               <h4 className='text-xl font-semibold mt-4'>Aspiring {userData.dreamjob}</h4>

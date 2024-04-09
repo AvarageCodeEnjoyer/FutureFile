@@ -116,7 +116,7 @@ hr {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: auto;
+  height: fit-content;
 }
 
 .user_info > h4 {
@@ -166,6 +166,7 @@ hr {
     margin-top: 2%;
     margin-right: 2%;
     width: auto;
+    height: fit-content;
   }
 
   /* ------------------------------- Top section ------------------------------ */
@@ -173,6 +174,14 @@ hr {
   .top_section {
     flex-direction: column;
     height: fit-content;
+  }
+
+  .user_info {
+    min-height: 6rem;
+  }
+
+  .user_info > h4 {
+    text-align: center;
   }
 
   /* ----------------------------- Middle section ----------------------------- */

@@ -1,8 +1,8 @@
-# FutureFile
+# FutureBase
 <b>FutureSight</b>, our sister application, is a mobile app designed for students to conveniently store all their school-related information in an intuitive manner.  
 
-<b>FutureFile</b> is the accompanying website that facilitates seamless data sharing among users. Each FutureSight user is assigned a unique user id and you can use it to share your profile. 
-The <b>FutureFile</b> website dynamically generates user profiles, complete with an auto-updating bio, as users fill out their information on the mobile app. It's important to note that while <b>FutureFile</b> serves as a platform to view user data, any edits or updates must be made within the <b>FutureSight</b> mobile app.
+<b>FutureBase</b> is the accompanying website that facilitates seamless data sharing among users. Each FutureSight user is assigned a unique user id and you can use it to share your profile. 
+The <b>FutureBase</b> website dynamically generates user profiles, complete with an auto-updating bio, as users fill out their information on the mobile app. It's important to note that while <b>FutureBase</b> serves as a platform to view user data, any edits or updates must be made within the <b>FutureSight</b> mobile app.
 
 ## Documentation
 - [Routes](#routes)
@@ -128,5 +128,5 @@ import LoadingSpinner from '@/src/components/LoadingSpinner'
 
 
 ## Conclusion
-FutureFile is a comprehensive web application for viewing profile information on a browser for the app FutureSight.
+FutureBase is a comprehensive web application for viewing profile information on a browser for the app FutureSight.
 
