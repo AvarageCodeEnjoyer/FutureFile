@@ -11,17 +11,17 @@ function collapseMenu({ arrayValues, key }) {
     </div>
     <div className="collapse-content"> 
       // TODO: FIX TO WORK WITH LINKS AS A TAGS
-      {key === 'Other Links' ? 
+      {/* {key === 'Other Links' ? 
         arrayValues.map(links => {
           return links
         }) 
-        :
-        arrayValues.map((item, index) => (
+        : */}
+        {arrayValues.map((item, index) => (
           <p className="data_display my-2 bg-halfBaked" key={index}>
             <b className="text-lg">{item}</b>
           </p>
-        ))
-      }
+        ))}
+      {/* } */}
     </div>
   </div>
 }
@@ -45,11 +45,11 @@ export default function IterableList({ items, key }) {
         break
 
       // TODO: FINISH THIS TO CREATE LINKS
-      case "Other Links":
+      /* case "Other Links":
         const linkList = items[key].map(data => {
           return CreateLink(data.link)
         })  
-        return collapseMenu({ arrayValues: linkList, key })
+        return collapseMenu({ arrayValues: linkList, key }) */
   
       default:
         arrayConversion = items[key].map(({ id, ...rest }) => Object.values(rest))
