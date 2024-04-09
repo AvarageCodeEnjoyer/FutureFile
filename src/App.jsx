@@ -25,7 +25,6 @@ function App() {
       if (!userId) return;
       const data = await getUser(userId, FIREBASE);
       setUser(data)
-      console.log(data)
     }
 
     getUserByID()
